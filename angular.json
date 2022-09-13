@@ -30,7 +30,9 @@
               "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [ 
+          "node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -103,5 +105,8 @@
       }
     }
   },
-  "defaultProject": "Front-End"
+  "defaultProject": "Front-End",
+  "cli": {
+    "analytics": "53b93686-ef50-4e2e-bacf-8a1317c916f3"
+  }
 }

@@ -1,4 +1,5 @@
-<nav class="navbar navbar-expand-lg bg-light">
+<div class="container-flued">
+  <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -9,16 +10,76 @@
             <a class="nav-link" href="#">Logo</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink ='/create' href="#">Create Book</a>
+            <a class="nav-link" routerLink='/create' href="#">Create Book</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink ="/search" href="#">Search Book</a>
+            <a class="nav-link" routerLink="/search" href="#">Search Book</a>
+          </li>
+          <li class="nav-item">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <button class="btn btn-sm btn-outline-secondry text-info" data-bs-toggle="modal"
+                data-bs-target="#addStudent" type="submit">Add
+                Student Records</button>
+            </div>
           </li>
         </ul>
         <span class="nav-item">
-            <a class="nav-link" href="#">Signup</a>
+          <a class="nav-link" href="#">Signup</a>
         </span>
-        
       </div>
     </div>
   </nav>
+  <!-- Add Book Modal -->
+  <div class="modal fade " id="addStudent" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add new Book</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body ">
+          <div class="container">
+            <h3 style="text-align: center;">Book Details</h3>
+            <div class="mb-3">
+              <label for="inputEmail1" class="form-label">Title</label>
+              <input type="text" [(ngModel)]="books.title" class="form-control" id="inputEmail1">
+          </div>
+          <div class="mb-3">
+              <label for="inputCategory" class="form-label">Category</label>
+              <input type="text" [(ngModel)]="books.category" class="form-control" id="inputCategory">
+          </div>
+          <!-- <label for="inputGroupFile02" class="form-label">Image</label>
+      <div class="input-group mb-3">
+          <input type="file" [(ngModel)] = "books.image"class="form-control" id="inputGroupFile02">
+          <label class="input-group-text" for="inputGroupFile02">Upload</label>
+      </div> -->
+          <div class="mb-3">
+              <label for="inputImage" class="form-label">Image</label>
+              <input type="text" [(ngModel)]="books.image" class="form-control" id="inputImage">
+          </div>
+          <div class="mb-3">
+              <label for="inputPrice" class="form-label">Price</label>
+              <input type="number" [(ngModel)]="books.price" class="form-control" id="inputPrice">
+          </div>
+          <div class="mb-3">
+              <label for="inputPublisher" class="form-label">Publisher</label>
+              <input type="text" [(ngModel)]="books.publisher" class="form-control" id="inputPublisher">
+          </div>
+          <div class="mb-3">
+              <label for="inputActive" class="form-label">Active</label>
+              <input type="text" [(ngModel)]="books.active" class="form-control" id="inputActive">
+          </div>
+          <div class="mb-3">
+              <label for="inputContent" class="form-label">Content</label>
+              <input type="text" [(ngModel)]="books.content" class="form-control" id="inputContent">
+          </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" (click) = "save()">Add Book</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

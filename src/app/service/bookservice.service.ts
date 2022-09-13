@@ -14,4 +14,8 @@ export class BookserviceService {
   createUser(user: { title: string; category: string; image: string , price: number, publisher: string,active:boolean,content:string}) {
     return this.http.post(BASE_URL, user);
   }
+
+  getUser(){
+    
+  }
 }
