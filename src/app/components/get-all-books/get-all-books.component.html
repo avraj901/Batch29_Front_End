@@ -1,0 +1,22 @@
+<table class="table table-hover shadow-sm p-3 mb-5 bg-body rounded">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Category</th>
+        <th scope="col">Price</th>
+        <th scope="col">Publisher</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books">
+        <td>{{book.title}}</td>
+        <td>{{book.category}}</td>
+        <td>{{book.price}}</td>
+        <td>{{book.publisher}}</td>
+        <td>
+          <button type="button" class="btn btn-outline-danger btn-detail me-2"
+            (click)="deleteBook(book.id)">Delete Book</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

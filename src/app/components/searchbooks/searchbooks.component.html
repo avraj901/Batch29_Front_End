@@ -1,0 +1,38 @@
+<div class="container text-left">
+    <h3>{{title}}</h3>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="search-book ms-2">
+        <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Search for a book by title or category or publisher and ...">
+      </div>
+      <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Logo</th>
+            <th scope="col">Title</th>
+            <!-- <th scope="col">Author</th> -->
+            <th scope="col">Category</th>
+            <th scope="col">Price</th>
+            <th scope="col">Publisher</th>
+            <th scope="col">Publish Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let book of books | filter:searchText">
+            <td>{{book.image}}</td>
+            <td>{{book.title}}</td>
+            <!-- <td>{{book.author}}</td> -->
+            <td>{{book.category}}</td>
+            <td>{{book.price}}</td>
+            <td>{{book.publisher}}</td>
+            <td>
+                <button type="button" class="btn btn-outline-info btn-detail me-2"
+                  (click)="purchaseBook(book.id)">Purchase Book</button> 
+              </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

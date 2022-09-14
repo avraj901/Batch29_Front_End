@@ -1,5 +1,5 @@
 export default class Books{
-
+    id: number =0;
     title: string = "";
     category: string = "";
     image: string = "";

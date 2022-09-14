@@ -19,13 +19,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <button class="btn btn-sm btn-outline-secondry text-info" data-bs-toggle="modal"
                 data-bs-target="#addStudent" type="submit">Add
-                Student Records</button>
+                Book Records</button>
             </div>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/getAll" href="#">Get All Books</a>
+          </li>
         </ul>
-        <span class="nav-item">
-          <a class="nav-link" href="#">Signup</a>
-        </span>
       </div>
     </div>
   </nav>
@@ -48,11 +48,6 @@
               <label for="inputCategory" class="form-label">Category</label>
               <input type="text" [(ngModel)]="books.category" class="form-control" id="inputCategory">
           </div>
-          <!-- <label for="inputGroupFile02" class="form-label">Image</label>
-      <div class="input-group mb-3">
-          <input type="file" [(ngModel)] = "books.image"class="form-control" id="inputGroupFile02">
-          <label class="input-group-text" for="inputGroupFile02">Upload</label>
-      </div> -->
           <div class="mb-3">
               <label for="inputImage" class="form-label">Image</label>
               <input type="text" [(ngModel)]="books.image" class="form-control" id="inputImage">
