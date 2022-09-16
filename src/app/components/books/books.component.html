@@ -1,0 +1,45 @@
+<div class ="card-top container-fluid">
+    <div class= "container d-flex">
+        <div class="item">
+            <a>
+                <img src="assets\books\cover-auto-7124.jpg">
+                <h6>Mystery & Thriller</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a>
+                <img src="assets\books\51anbRJtIoL.jpeg">
+                <h6>Science Fiction</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a>
+                <img src="assets\books\cover-55412.jpg">
+                <h6>Biographies</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a>
+                <img src="assets\books\cover-auto-31239.jpg">
+                <h6>Action & Adventure</h6>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="div container">
+    <div class="div row">
+        <ng-container *ngFor="let book of books">
+            <div class = "card col-md-3">
+                <img  src="assets\books\bio\{{book.image}}" alt="">
+                <h5 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;max-width: 100ch;">
+                    {{book.title}}
+                </h5>
+                <p><strong>Price: </strong>{{book.price}}</p>
+                <p></p>
+                <button class="btn btn-primary" (click) = "addToCart(book)">Add to cart</button>
+            </div>
+        </ng-container>
+        
+    </div>
+</div>

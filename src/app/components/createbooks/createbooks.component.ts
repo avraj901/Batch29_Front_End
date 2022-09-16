@@ -20,6 +20,7 @@ export class CreatebooksComponent implements OnInit {
     const observable = this.bookService.createBook(this.books);
     observable.subscribe((response: any) => {
       console.log(response);
+      alert("Successfully added book in Book Records");
     },
       function (error) {
         console.log(error);

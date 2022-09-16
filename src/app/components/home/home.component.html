@@ -1,29 +1,37 @@
-<div class="container-flued">
-  <nav class="navbar navbar-expand-lg bg-light">
+ <div class="container-flued">
+  <nav class="navbar navbar-expand-lg bg-primary shadow-sm">
     <div class="container-fluid">
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <li>
+            <i class='fas fa-book-open' style='font-size:48px;color:rgb(227, 228, 233)'></i>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Logo</a>
+            <b><a class="nav-link active" aria-current="page" href="#">Books</a></b>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink='/create' href="#">Create Book</a>
+            <a class="nav-link" routerLink="/getAll" href="#">Get All Books</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/search" href="#">Search Book</a>
-          </li>
-          <li class="nav-item">
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <button class="btn btn-sm btn-outline-secondry text-info" data-bs-toggle="modal"
+            <div class="collapse navbar-collapse mb-2" id="navbarSupportedContent">
+              <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal"
                 data-bs-target="#addStudent" type="submit">Add
                 Book Records</button>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/getAll" href="#">Get All Books</a>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="search Books">
+            </div>
+            <span class="fas fa-search search-icon"></span>
+          </li>
+          <li class="nav-item">
+            <div>
+            <button routerLink = "/cart" class="btn btn-primary">
+              <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
+              <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
+            </button>
+            </div>
           </li>
         </ul>
       </div>
@@ -77,4 +85,23 @@
       </div>
     </div>
   </div>
-</div>
+ </div> 
+
+
+<!-- <header>
+  <div class = "navbar navbar-dark bg-primary shadow-sm">
+    <i style="font-size: 40px;" class= "fas fa-book-open"></i>
+    <strong style="font-size: 30px;">Book</strong>
+
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="search Books">
+    </div>
+    <span class="fas fa-search search-icon"></span>
+    
+    
+    <button class="btn btn-primary">
+      <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
+      <div style="font-size: 10px;" class="badge bg-danger">5</div>
+    </button>
+  </div>
+</header> -->

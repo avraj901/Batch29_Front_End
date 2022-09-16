@@ -7,4 +7,6 @@ export default class Books{
     publisher: string ="";
     active: boolean = false;
     content: string = "";
+    quantity : number = 0;
+    total: number = 0;
 }

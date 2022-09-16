@@ -11,6 +11,8 @@ import { CreatebooksComponent } from './components/createbooks/createbooks.compo
 import { HttpClientModule } from '@angular/common/http';
 import { GetAllBooksComponent } from './components/get-all-books/get-all-books.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
+import { BooksComponent } from './components/books/books.component';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
     SearchbooksComponent,
     CreatebooksComponent,
     GetAllBooksComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    BooksComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

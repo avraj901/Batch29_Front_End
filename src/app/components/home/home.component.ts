@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import Books from 'src/app/entity/Books';
 import { BookService } from 'src/app/service/book.service';
+import { CartService } from 'src/app/service/cart.service';
 
 
 @Component({
@@ -11,10 +12,13 @@ import { BookService } from 'src/app/service/book.service';
 export class HomeComponent implements OnInit {
 
   books: Books = new Books();
-
-  constructor(public bookService: BookService) { }
+  public totalItem : number = 0;
+  constructor(public bookService: BookService,private cartService : CartService) { }
 
   ngOnInit(): void {
+    this.cartService.getProducts().subscribe(res =>{
+      this.totalItem = res.length;
+    })
   }
 
   save() {
