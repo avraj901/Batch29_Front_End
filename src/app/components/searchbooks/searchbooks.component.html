@@ -1,17 +1,17 @@
-<!-- <div class="container text-left">
+ <div class="container text-left">
     <h3>{{title}}</h3>
   </div>
   <div class="container">
     <div class="row">
       <div class="search-book ms-2">
-        <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Search for a book by title or category or publisher and ...">
+        <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Search book by title or category or publisher and ...">
       </div>
       <table class="table table-striped">
         <thead>
         <tr>
             <th scope="col">Logo</th>
             <th scope="col">Title</th>
-            
+            <th scope="col">Author</th>
             <th scope="col">Category</th>
             <th scope="col">Price</th>
             <th scope="col">Publisher</th>
@@ -20,12 +20,13 @@
         </thead>
         <tbody>
         <tr *ngFor="let book of books | filter:searchText">
-            <td>{{book.image}}</td>
+          <img style="width: 35%;padding: 0%;" src="assets\books\bio\{{book.image}}" alt="">
             <td>{{book.title}}</td>
-           
+            <td>{{book.author}}</td>
             <td>{{book.category}}</td>
             <td>{{book.price}}</td>
             <td>{{book.publisher}}</td>
+            <td>{{book.publishDate | date}}</td>
             <td>
                 <button type="button" class="btn btn-outline-info btn-detail me-2"
                   (click)="purchaseBook(book.id)">Purchase Book</button> 
@@ -35,4 +36,4 @@
       </table>
     </div>
   </div>
-   -->
+  

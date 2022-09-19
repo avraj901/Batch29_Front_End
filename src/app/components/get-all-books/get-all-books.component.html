@@ -5,6 +5,9 @@
         <th scope="col">Category</th>
         <th scope="col">Price</th>
         <th scope="col">Publisher</th>
+        <th scope="col">Author</th>
+        <th scope="col">Published Date</th>
+        <th scope="col">Action</th>
       </tr>
     </thead>
     <tbody>
@@ -13,9 +16,15 @@
         <td>{{book.category}}</td>
         <td>{{book.price}}</td>
         <td>{{book.publisher}}</td>
+        <td>{{book.author}}</td>
+        <td>{{book.publishDate | date:'fullDate'}}</td>
         <td>
-          <button type="button" class="btn btn-outline-danger btn-detail me-2"
+          <button type="button" class="btn btn-outline-danger btn-detail"
             (click)="deleteBook(book.id)">Delete Book</button>
+        </td>
+        <td *ngIf="book.blockBook === true">
+          <button type="button" class="btn btn-outline-primary btn-detail" 
+          (click)="unblockBook(book.id)" >Unblock Book</button>
         </td>
       </tr>
     </tbody>

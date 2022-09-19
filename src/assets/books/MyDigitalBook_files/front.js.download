@@ -1,0 +1,94 @@
+//Nice Scroll
+//Nice Scroll
+$(document).ready(function() {
+$(".Scrol").niceScroll({cursorwidth:3,cursoropacitymin:0.4,cursorcolor:'#fecb4c',cursorborder:1,
+      cursorborderradius:4,boxzoom: false, touchbehavior: false,emulatetouch: false,
+      autohidemode:'leave'}); // First scrollable DIV
+});
+//Nice Sroll end
+//Nice Sroll end
+//question Accordian
+$(document).ready(function() {
+$(".qsnTtl").click(function() {
+$(this).toggleClass("mns");	
+$(this).siblings(".qsnCntn").slideToggle();
+});
+});
+//question Accordian end
+
+//.appbdy height adjester
+$(document).ready(function(){
+$('.appbdy') .css({'height': (($(window).height()) - 96)+'px'});
+$(window).bind('resize', function(){
+$('.appbdy') .css({'height': (($(window).height()) - 96)+'px'});
+//alert('resized');
+});
+});
+//.appbdy height adjester end
+
+// $(function(){
+// $(".stp-fotr-btns .contn").click(function(){
+// $(".actionBar .Next").trigger('click');
+// });
+// $(".stp-fotr-btns .bck").click(function(){
+// $(".actionBar .Previous").trigger('click');
+// });
+// }); 
+
+$(document).ready(function(){
+// Smart Wizard 	
+//$('#wizard').smartWizard();
+    
+});
+
+// nexted tab system start
+$(document).ready(function() {
+$("#content").find("[id^='tab']").hide(); // Hide all content
+$("#tabs li:first").attr("id","current"); // Activate the first tab
+$("#content #tab1").fadeIn(); // Show first tab's content
+$('#tabs a').click(function(e) {
+e.preventDefault();
+if ($(this).closest("li").attr("id") == "current"){ //detection for current tab
+return;       
+}
+else{             
+$("#content").find("[id^='tab']").hide(); // Hide all content
+$("#tabs li").attr("id",""); //Reset id's
+$(this).parent().attr("id","current"); // Activate this
+$('#' + $(this).attr('href')).fadeIn(); // Show content for the current tab
+}
+$( '#' + $(this).attr('href') + ' .nstd-tb li:first').trigger('click'); 
+});
+
+});
+
+$(function() {
+$('.nstd-tb li').click(function(){
+$('.nstd-tb li').removeClass('active-tb');
+$('.nstd-tb li').removeAttr('class');
+$(this).addClass('active-tb');
+});
+});
+
+// nexted tab system end
+
+// side panal Open-close js
+$(document).ready(function() {
+$(".mob-mnu").click(function(){
+$(this).toggleClass( "actv" );
+$(".lftclm").toggleClass("opns");
+});
+});
+// side panal Open-close js end
+
+
+
+
+
+
+
+					 
+
+
+
+

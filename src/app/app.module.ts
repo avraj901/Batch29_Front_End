@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
@@ -13,6 +13,11 @@ import { GetAllBooksComponent } from './components/get-all-books/get-all-books.c
 import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { BooksComponent } from './components/books/books.component';
 import { CartComponent } from './components/cart/cart.component';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
+import { EditbooksComponent } from './components/editbooks/editbooks.component';
+import { AboutComponent } from './components/about/about.component';
+
 
 @NgModule({
   declarations: [
@@ -23,14 +28,20 @@ import { CartComponent } from './components/cart/cart.component';
     GetAllBooksComponent,
     UserDetailsComponent,
     BooksComponent,
-    CartComponent
+    CartComponent,
+    RegisterComponent,
+    LoginComponent,
+    EditbooksComponent,
+    AboutComponent,
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

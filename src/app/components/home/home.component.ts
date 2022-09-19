@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit {
   save() {
     const observable = this.bookService.createBook(this.books);
     observable.subscribe((response: any) => {
+      alert("Successfully added book in Record");
       console.log(response);
     },
       function (error) {
@@ -33,5 +34,5 @@ export class HomeComponent implements OnInit {
     )
     console.log(this.books.title, this.books.category, this.books.image, this.books.publisher, this.books.active, this.books.content);
     }
-
+    
 }

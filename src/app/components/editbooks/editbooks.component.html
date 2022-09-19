@@ -1,0 +1,89 @@
+<table class="table table-hover shadow-sm p-3 mb-5 bg-body rounded">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Category</th>
+      <th scope="col">Price</th>
+      <th scope="col">Publisher</th>
+      <th scope="col">Author</th>
+      <th scope="col">Published Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let books of bookList">
+      <td>{{books.title}}</td>
+      <td>{{books.category}}</td>
+      <td>{{books.price}}</td>
+      <td>{{books.publisher}}</td>
+      <td>{{books.author}}</td>
+      <td>{{books.publishDate | date:'fullDate'}}</td>
+      <td>
+        <button type="button" class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#editBook"
+          (click)="editBooks(books.id)">Edit</button>
+        <button type="button" class="btn btn-outline-danger me-2" (click)="blockBook(books.id)">Block Book</button>
+        <!-- <button type="button" class="btn btn-outline-info btn-detail me-2"
+          (click)="studentDetails(book.id)">Details</button> -->
+        <!-- <button type="button" class="btn btn-outline-success" (click)="studentListClassWise(student.className)">Student
+            classWise</button>
+        </td> -->
+    </tr>
+  </tbody>
+</table>
+<!-- Edit BOok Modal -->
+<div class="modal fade" id="editBook" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Book</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <div class="container">
+          <h5 style="text-align: center;">Book Details</h5>
+          <div class="mb-3">
+            <label for="inputEmail1" class="form-label">Title</label>
+            <input type="text" [(ngModel)]="book.title" class="form-control" id="inputEmail1">
+          </div>
+          <div class="mb-3">
+            <label for="inputCategory" class="form-label">Category</label>
+            <input type="text" [(ngModel)]="book.category" class="form-control" id="inputCategory">
+          </div>
+          <div class="mb-3">
+            <label for="inputImage" class="form-label">Image</label>
+            <input type="text" [(ngModel)]="book.image" class="form-control" id="inputImage">
+          </div>
+          <div class="mb-3">
+            <label for="inputPrice" class="form-label">Price</label>
+            <input type="number" [(ngModel)]="book.price" class="form-control" id="inputPrice">
+          </div>
+          <div class="mb-3">
+            <label for="inputPublisher" class="form-label">Publisher</label>
+            <input type="text" [(ngModel)]="book.publisher" class="form-control" id="inputPublisher">
+          </div>
+          <div class="mb-3">
+            <label for="inputAuthor" class="form-label">Author</label>
+            <input type="text" [(ngModel)]="book.author" class="form-control" id="inputAuthor">
+          </div>
+          <div class="mb-3">
+            <label for="inputActive" class="form-label">Active</label>
+            <input type="text" [(ngModel)]="book.active" class="form-control" id="inputActive">
+          </div>
+          <div class="mb-3">
+            <label for="inputDate" class="form-label">Publish Date</label>
+            <input type="date" [(ngModel)]="book.publishDate" value="yyyy-month-date" class="form-control"
+              id="inputDate">
+          </div>
+          <div class="mb-3">
+            <label for="inputContent" class="form-label">Content</label>
+            <input type="text" [(ngModel)]="book.content" class="form-control" id="inputContent">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-outline-success" (click)="updateBook(book,book.id)">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

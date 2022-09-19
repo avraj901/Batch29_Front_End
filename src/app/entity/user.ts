@@ -1,4 +1,8 @@
 export class User {
-    name : string = "";
-    emailId : string = "";
+    id: number =0;
+    username: string = "";
+    password: string = "";
+    firstName: string = "";
+    lastName: string = "";
+    emailId: string = "";
 }

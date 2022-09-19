@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<!-- saved from url=(0025)https://mydigitalbook.in/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>Welcome - My Digital Book</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="My Digital Book">
+  	<meta name="keywords" content="My Digital Book">
+  	<meta name="author" content="My Digital Book">
+	<link href="https://mydigitalbook.in/dist/images/favicon.png" rel="shortcut icon" type="image/png">
+	<link href="https://mydigitalbook.in/dist/images/apple-icon.png" rel="icon" type="image/png">
+	<link rel="stylesheet" href="./MyDigitalBook_files/style.css" type="text/css"> 
+	<link rel="stylesheet" href="./MyDigitalBook_files/toast.css">
+	<script type="text/javascript">var base_url = "https://mydigitalbook.in/";</script>
+	<script src="./MyDigitalBook_files/jquery.js.download"></script>
+</head>
+<!-- <body oncopy="return false" oncut="return false" onpaste="return false"> -->
+<body>
+	<div class="header">
+		<a href="https://mydigitalbook.in/" class="appLogo">
+			<img src="./MyDigitalBook_files/AppLogo.png">
+		</a>
+				<ul class="ritLnk">
+			<li><a href="mailto:info@myditalbook.in" title="click to Mail"><i class="emil"></i> info@mydigitalbook.in</a></li> <li><a href="tel:7534038000, 7055033311, 7500737737" title="Click to Call"><i class="clOut"></i> 7534038000, 7055033311, 7500737737</a></li>
+		</ul>
+			</div>
+<div class="appbdy" style="height: 401px;">
+	<div class="signubx">
+		<div class="formbx">
+			<ul id="tabs" class="tabs">
+				<li id="current"><a href="https://mydigitalbook.in/tab1">Log In</a></li>
+				<li id=""><a href="https://mydigitalbook.in/tab2">Sign Up</a></li>
+
+			</ul>
+			<div id="content" class="tbconr"> 
+				<div id="tab1" class="Login" style="display: block;">
+					<h2 class="hdn2"><small>Have account already?</small><br>Login Here</h2>
+					<form class="ajaxForm" id="ajaxForm1" method="post" action="https://mydigitalbook.in/">
+						<div class="row pullLft mbmr">
+							<div class="col-1">
+								<img src="./MyDigitalBook_files/lock.png">
+							</div>
+						</div>
+						<div class="row pullLft">
+							<div class="col-1">
+								<input type="text" name="email" class="inptw" placeholder="Enter Email Id*">
+								<span class="text-danger" id="email"></span>
+							</div> 
+						</div>
+						<div class="row pullLft">
+							<div class="col-1">
+								<input type="password" name="password" class="inptw" placeholder="Enter Password*">
+								<span class="text-danger" id="password"></span>
+							</div> 
+						</div>
+						<div class="row pullLft">
+							<div class="col-1 btnhldr">
+								<button type="submit" class="btns">Login</button><br> <br>
+								<a href="https://mydigitalbook.in/forgot-password">Forgot Password?</a>
+							</div>  
+						</div>
+					</form>
+				</div>
+								<div id="tab2" class="signup" style="display: none;">
+					<h2 class="hdn2">Sign Up as</h2>
+					<form class="signufrm ajaxForm" id="ajaxForm2" action="https://mydigitalbook.in/signup" method="post" autocomplete="off">
+						<input type="hidden" name="captcha_check" value="egAPnk">
+						<div class="row pullLft mbmr">
+							<div class="col-2">
+								<span class="col-1">
+									<img src="./MyDigitalBook_files/Teacher.png">
+								</span>
+								<input type="radio" name="user_type" value="Teacher" id="teachertab" required=""> 
+								<label for="teachertab"><strong>Teacher</strong></label>
+							</div>
+							<div class="col-2">
+								<span class="col-1">
+									<img src="./MyDigitalBook_files/student.png">
+								</span>
+								<input type="radio" name="user_type" value="Student" id="studenttab" required="">  
+								<label for="studenttab"><strong>Student</strong></label>
+							</div>
+						</div>
+						<span class="text-danger" id="user_type"></span>
+						<div class="row pullLft">
+							<div class="col-1">
+								<input type="text" name="full_name" class="inptw" placeholder="Enter Your Name*">
+								<span class="text-danger" id="full_name"></span>
+							</div> 
+						</div>
+						<div class="row pullLft">
+							<div class="col-2">
+								<input type="email" name="email_add" class="inptw" placeholder="Enter Your Email*">
+								<span class="text-danger" id="email_add"></span>
+							</div> 
+							<div class="col-2">
+								<input type="text" min="1111111111" max="9999999999" name="contact" class="inptw" placeholder="Enter Phone No.*">
+								<span class="text-danger" id="contact"></span>
+							</div> 
+						</div>
+
+						<div class="row pullLft">
+							<div class="col-2">
+								<select class="inptw" name="state_id" onchange="getCity(this.value);">
+									<option value="">Select Option</option><option value="1">Andaman and Nicobar Islands</option><option value="2">Andhra Pradesh</option><option value="3">Arunachal Pradesh</option><option value="4">Assam</option><option value="5">Bihar</option><option value="6">Chandigarh</option><option value="7">Chhattisgarh</option><option value="8">Dadra and Nagar Haveli</option><option value="9">Daman and Diu</option><option value="10">Delhi</option><option value="11">Goa</option><option value="12">Gujarat</option><option value="13">Haryana</option><option value="14">Himachal Pradesh</option><option value="15">Jammu and Kashmir</option><option value="16">Jharkhand</option><option value="17">Karnataka</option><option value="18">Kenmore</option><option value="19">Kerala</option><option value="20">Lakshadweep</option><option value="21">Madhya Pradesh</option><option value="22">Maharashtra</option><option value="23">Manipur</option><option value="24">Meghalaya</option><option value="25">Mizoram</option><option value="26">Nagaland</option><option value="27">Narora</option><option value="28">Natwar</option><option value="29">Odisha</option><option value="30">Paschim Medinipur</option><option value="31">Pondicherry</option><option value="32">Punjab</option><option value="33">Rajasthan</option><option value="34">Sikkim</option><option value="35">Tamil Nadu</option><option value="36">Telangana</option><option value="37">Tripura</option><option value="38">Uttar Pradesh</option><option value="39">Uttarakhand</option><option value="40">Vaishali</option><option value="41">West Bengal</option>								</select>
+								<span class="text-danger" id="state_id"></span>
+							</div> 
+							<div class="col-2">
+								<select class="inptw" name="city_id" id="cityList">
+									<option value="">--Select City--</option>
+								</select>
+								<span class="text-danger" id="city_id"></span>
+							</div> 
+						</div>
+						<div class="row pullLft">
+							<div class="col-1">
+								<textarea class="inptw" name="full_address" placeholder="Write Your School Address here.."></textarea>
+							</div> 
+							<span class="text-danger" id="full_address"></span>
+						</div>
+						<div class="row pullLft">
+							<div class="col-1">
+								<div id="forTeacher" style="display: none;">
+									<b class="lbls">Classes taught :</b> 
+									<span class="ckbx">
+										<input type="checkbox" id="ckbCheckAll"><label for="ckbCheckAll">Select All</label>
+									</span>
+																		
+									<span class="ckbx">
+										<input type="checkbox" name="selected_classes[]" class="checkBoxClass" id="cls_1" value="1"><label for="cls_1">Class - 1</label>
+									</span>
+																		
+									<span class="ckbx">
+										<input type="checkbox" name="selected_classes[]" class="checkBoxClass" id="cls_2" value="2"><label for="cls_2">Class - 2</label>
+									</span>
+																		
+									<span class="ckbx">
+										<input type="checkbox" name="selected_classes[]" class="checkBoxClass" id="cls_3" value="3"><label for="cls_3">Class - 3</label>
+									</span>
+																		
+									<span class="ckbx">
+										<input type="checkbox" name="selected_classes[]" class="checkBoxClass" id="cls_4" value="4"><label for="cls_4">Class - 4</label>
+									</span>
+																		
+									<span class="ckbx">
+										<input type="checkbox" name="selected_classes[]" class="checkBoxClass" id="cls_5" value="5"><label for="cls_5">Class - 5</label>
+									</span>
+																		
+									<span class="ckbx">
+										<input type="checkbox" name="selected_classes[]" class="checkBoxClass" id="cls_6" value="6"><label for="cls_6">Class - 6</label>
+									</span>
+																		
+									<span class="ckbx">
+										<input type="checkbox" name="selected_classes[]" class="checkBoxClass" id="cls_7" value="7"><label for="cls_7">Class - 7</label>
+									</span>
+																		
+									<span class="ckbx">
+										<input type="checkbox" name="selected_classes[]" class="checkBoxClass" id="cls_8" value="8"><label for="cls_8">Class - 8</label>
+									</span>
+																		
+									<span class="ckbx">
+										<input type="checkbox" name="selected_classes[]" class="checkBoxClass" id="cls_9" value="9"><label for="cls_9">Introductory-0</label>
+									</span>
+																	</div>
+								<div id="forStudent" style="display: block;">
+									<select class="inptw" name="class_id">
+										<option value="">--Select Class--</option>
+										<option value="1">Class - 1</option><option value="2">Class - 2</option><option value="3">Class - 3</option><option value="4">Class - 4</option><option value="5">Class - 5</option><option value="6">Class - 6</option><option value="7">Class - 7</option><option value="8">Class - 8</option><option value="9">Introductory-0</option>									</select>
+								</div>
+							</div> 
+							<span class="text-danger" id="selected_classes"></span>
+						</div>
+						<div class="row pullLft">
+							<div class="col-1">
+								<input type="text" name="subjects" class="inptw" placeholder="Subject Taught*">
+								<span class="text-danger" id="subjects"></span>
+							</div> 
+						</div>
+
+						<div class="row pullLft">
+							<div class="col-2">
+								<input type="password" name="new_password" class="inptw" placeholder="Enter Password">
+								<span class="text-danger" id="new_password"></span>
+							</div> 
+							<div class="col-2">
+								<input type="password" name="con_password" class="inptw" placeholder="Confirm Password">
+								<span class="text-danger" id="con_password"></span>
+							</div> 
+						</div>
+
+						<div class="row pullLft">
+							<div class="col-1" style="text-align:center; margin-top:10px;">
+								<div style="background: #f8b101;color: #fff;padding: 5px;width: 125px;font-size: 25px;font-family: cursive;float: none;display: inline-block;">
+									egAPnk								</div>
+							</div>
+							<div class="col-1">
+								<input type="text" name="captcha_input" class="inptw" placeholder="Enter Captcha Code*" style="text-align:center;">
+								<span class="text-danger" id="captcha_input"></span>
+							</div> 
+						</div>
+						<div class="row pullLft">
+							<div class="col-1 btnhldr">
+								<button type="submit" class="btns">Sign Up</button>
+							</div> 
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<style type="text/css">
+	#forStudent, #forTeacher{ display: none; }
+</style>
+<script type="text/javascript">
+	$("input[name=user_type]").on('click', function(){
+		if($(this).val() == "Student"){
+			$("#forStudent").show();
+			$("#forTeacher").hide();
+		}else if($(this).val() == "Teacher"){
+			$("#forStudent").hide();
+			$("#forTeacher").show();
+		}
+		
+	});
+	$("#ckbCheckAll").click(function () {
+		$(".checkBoxClass").prop('checked', $(this).prop('checked'));
+		});
+</script>				<div class="cprt">Copyright © My Digital Book.</div>
+				<script src="./MyDigitalBook_files/toast.js.download"></script>
+		<script src="./MyDigitalBook_files/jquery.nicescroll.js.download"></script>
+		<script src="./MyDigitalBook_files/front.js.download"></script>
+		<script src="./MyDigitalBook_files/custom.js.download"></script>
+	
+</body></html>

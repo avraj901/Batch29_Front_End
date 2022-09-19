@@ -3,18 +3,13 @@
     <h3 style="text-align: center;">Create Books</h3>
     <div class="card-body">
         <div class="mb-3">
-            <label for="inputEmail1" class="form-label">Title</label>
-            <input type="text" [(ngModel)]="books.title" class="form-control" id="inputEmail1">
+            <label for="inputTitle" class="form-label">Title</label>
+            <input type="text" [(ngModel)]="books.title" class="form-control" id="inputTitle">
         </div>
         <div class="mb-3">
             <label for="inputCategory" class="form-label">Category</label>
             <input type="text" [(ngModel)]="books.category" class="form-control" id="inputCategory">
         </div>
-        <!-- <label for="inputGroupFile02" class="form-label">Image</label>
-    <div class="input-group mb-3">
-        <input type="file" [(ngModel)] = "books.image"class="form-control" id="inputGroupFile02">
-        <label class="input-group-text" for="inputGroupFile02">Upload</label>
-    </div> -->
         <div class="mb-3">
             <label for="inputImage" class="form-label">Image</label>
             <input type="text" [(ngModel)]="books.image" class="form-control" id="inputImage">
@@ -28,8 +23,16 @@
             <input type="text" [(ngModel)]="books.publisher" class="form-control" id="inputPublisher">
         </div>
         <div class="mb-3">
+            <label for="inputAuthor" class="form-label">Author</label>
+            <input type="text" [(ngModel)]="books.author" class="form-control" id="inputAuthor">
+        </div>
+        <div class="mb-3">
             <label for="inputActive" class="form-label">Active</label>
             <input type="text" [(ngModel)]="books.active" class="form-control" id="inputActive">
+        </div>
+        <div class="mb-3">
+            <label for="inputDate" class="form-label">Publish Date</label>
+            <input type="date" [(ngModel)]="books.publishDate" value="yyyy-month-date" class="form-control" id="inputDate">
         </div>
         <div class="mb-3">
             <label for="inputContent" class="form-label">Content</label>

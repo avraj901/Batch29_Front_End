@@ -1,5 +1,9 @@
-<div class ="card-top container-fluid">
-    <div class= "container d-flex">
+<div class="card-top container-fluid">
+    <div class="container d-flex">
+        <div class="item">
+            <input type="text" class="form-control" [(ngModel)]="searchText" placeholder="Search Books">
+        </div>
+        <span class="fas fa-search search-icon"></span>
         <div class="item">
             <a>
                 <img src="assets\books\cover-auto-7124.jpg">
@@ -24,22 +28,20 @@
                 <h6>Action & Adventure</h6>
             </a>
         </div>
+
     </div>
 </div>
-
 <div class="div container">
     <div class="div row">
-        <ng-container *ngFor="let book of books">
-            <div class = "card col-md-3">
-                <img  src="assets\books\bio\{{book.image}}" alt="">
+        <ng-container *ngFor="let book of bookList | filter:searchText">
+            <div class="card col-md-3">
+                <img src="assets\books\bio\{{book.image}}" alt="">
                 <h5 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;max-width: 100ch;">
                     {{book.title}}
                 </h5>
                 <p><strong>Price: </strong>{{book.price}}</p>
-                <p></p>
-                <button class="btn btn-primary" (click) = "addToCart(book)">Add to cart</button>
+                <button class="btn btn-primary" (click)="addToCart(book)">Add to cart</button>
             </div>
         </ng-container>
-        
     </div>
 </div>

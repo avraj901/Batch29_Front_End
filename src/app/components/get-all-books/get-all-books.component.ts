@@ -17,7 +17,7 @@ export class GetAllBooksComponent implements OnInit {
   }
 
   getAllBooks() {
-    this.bookService.getAllBooks().subscribe(response => {
+    this.bookService.getAllBlockBooks().subscribe(response => {
       this.books = response;
       console.log("response", response);
     }, error => {
@@ -30,5 +30,11 @@ export class GetAllBooksComponent implements OnInit {
       console.log(response);
       this.getAllBooks();
     }, error => (console.log(error)))
+  }
+  unblockBook(id : number){
+    this.bookService.blockABook(id,false).subscribe(response => {
+        console.log(response);
+        this.getAllBooks();
+    })
   }
 }

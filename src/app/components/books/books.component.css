@@ -4,13 +4,14 @@
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background: #fff;
+    background: hsl(0, 61%, 85%);
     background-clip: border-box;
     border: 1px solid rgba(0, 0,0, 0.2);
     border-radius: .25rem;
+   
 }
 .item img {
-    width: 64px;
+    width: 65px;
 }
 .item{
     margin: 0px 10px;
@@ -20,17 +21,40 @@
     color : blue;
 }
 .card {
-    padding: 30px;
-    margin: 45px;
+    padding: 35px;
+    margin: 0px;
+    width: 216px;
+    height: 275px;
+    background: rgb(238, 179, 212);
 }
 .card img {
-    width: 200px;
-    height: 200px;
-    margin-bottom: 15px;
+    width: 101px;
+    height: 123px;
+    margin-bottom: 5px;
+    margin-top: -19px;
     transition: 0.3s ease-in-out;
 }
 
 .card img:hover{
     transition: 0.3s ease-in-out;
     transform: scale(1.1);
+}
+.card button{
+    margin-bottom: -22px;
+    margin-top: 6px;
+}
+
+.form-control{
+    border-radius: 3px;
+    width: 392px;
+    margin-left: -68px;
+    margin-right: 17px;
+    margin-top: 26px;
+}
+.search-icon{
+    position: absolute;
+    z-index: 10;
+    right: 69%;
+    top: 37px;
+    color : rgb(153, 153, 248);
 }

@@ -1,0 +1,214 @@
+var lastChar = base_url.charAt(base_url.length-1); 
+if(lastChar == "/"){
+    base_url = base_url.substring(0, base_url.length - 1);
+}
+var enable = false;
+if(enable){
+    // To disable right click
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
+    // To disable F12 options
+    document.onkeypress = function (event) {
+        event = (event || window.event);
+        if (event.keyCode == 123) {
+            return false;
+        }
+    }
+    document.onmousedown = function (event) {
+        event = (event || window.event);
+        if (event.keyCode == 123) {
+            return false;
+        }
+    }
+    document.onkeydown = function (event) {
+        event = (event || window.event);
+        if (event.keyCode == 123) {
+            return false;
+        }
+    }
+
+    // To To Disable ctrl+c, ctrl+u
+
+    $(document).ready(function($){
+        $(document).keydown(function(event) {
+            var pressedKey = String.fromCharCode(event.keyCode).toLowerCase();
+
+            if (event.ctrlKey && (pressedKey == "c" || pressedKey == "u" || pressedKey == "v" || pressedKey == "x")) {
+                //alert('Sorry, This Functionality Has Been Disabled!');
+                //disable key press porcessing
+                return false;
+            }
+        });
+    });
+}
+
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            $('#preview-image').attr('src', e.target.result);
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+$("#view-image").change(function() {
+    readURL(this);
+});
+
+$(document).ready(function(){
+
+    $(".ajaxForm").on('submit', function(e)
+    {
+        e.preventDefault();
+        var id = $(this).attr('id'); 
+        $.ajax({
+            type: $(this).attr('method'),
+            url: $(this).attr('action'),
+            data: new FormData(this),
+            contentType: false,
+            cache: false,
+            processData:false,
+            beforeSend: function(){
+                $("#"+id+" button").attr("disabled","disabled");
+                $("#"+id+" button").parent().prepend('<div id="prpendLoader"><center><img src="'+base_url+'/dist/img/wait.gif"></center></div>');
+            },
+            success: function(data){
+                $("#prpendLoader").remove();
+                $(".text-danger").html('');
+                if($.parseJSON(data).status == 'success')
+                {
+                    alertMessage('success',$.parseJSON(data).message);
+                    //$("#"+id)[0].reset();
+                    if($.parseJSON(data).redirect != ''){
+                        setTimeout(function(){ window.location.href = $.parseJSON(data).redirect; }, 1000);
+                        
+                    }
+                }
+                else
+                {
+                    alertMessage('danger',$.parseJSON(data).message);
+                    $("#"+id+" .text-danger").html('');
+                    $.each($.parseJSON(data).data, function( index, value ) {
+                        $("#"+index).html(value);
+                    });
+                    $("#"+id+" button").removeAttr("disabled");
+                }
+            }
+        });
+    });
+
+    $("body").on("click", ".deleterow", function(event){
+        var id    = $(this).data("id");
+        var table  = $(this).data("table");
+        if(confirm("Are you sure want to delete this?")){
+            $.ajax({
+                url : base_url+'/admin/user/deleterow',
+                method : "POST",
+                data : {id: id, table: table},
+                beforeSend: function(){
+                    $("body").css('opacity', '.3');
+                },
+                success: function(data){
+                    $("body").css('opacity', '1');
+                    if($.parseJSON(data).status == 'success')
+                    {
+                        if(table == "file"){
+                            $("#file_"+id).hide();
+                        }else{
+                            $("#row_"+id).hide();
+                        }
+                        alertMessage('success',$.parseJSON(data).message);
+                    }
+                    else
+                    {
+                        alertMessage('danger',$.parseJSON(data).message);
+                    }
+                }
+            });
+        }
+    });
+});
+
+function alertMessage(status,message){
+    bootoast.toast({
+        message: message,
+        type: status
+    });
+}
+
+function getCountry(){
+    $.ajax({
+        type: 'POST',
+        url: base_url+'/admin/user/getCountry',
+        data: "",
+        success: function(data){
+            $("#countryList").html(data);
+        }
+    });
+}
+
+function getState(country_id){
+    $.ajax({
+        type: 'POST',
+        url: base_url+'/admin/user/getState',
+        data: {country_id:country_id},
+        success: function(data){
+            $("#stateList").html(data);
+        }
+    });
+}
+
+function getCity(state_id){
+    $.ajax({
+        type: 'POST',
+        url: base_url+'/admin/user/getCity',
+        data: {state_id:state_id},
+        success: function(data){
+            $("#cityList").html(data);
+        }
+    });
+}
+
+function getsubject(board_id, class_id, type_id){
+    $.ajax({
+        type: 'POST',
+        url: base_url+'/admin/user/getsubject',
+        data: {board_id:board_id, class_id:class_id, type_id:type_id},
+        success: function(data){
+            $("#subjectList").html(data);
+        }
+    });
+}
+
+function getseries (class_id){
+    $.ajax({
+        type: 'POST',
+        url: base_url+'/admin/user/getseries',
+        data: {class_id:class_id},
+        success: function(data){
+            $("#seriesList").html(data);
+        }
+    });
+}
+
+function getbooks(board_id, class_id, series_id){
+    $.ajax({
+        type: 'POST',
+        url: base_url+'/admin/user/getbooks',
+        data: {board_id:board_id, class_id:class_id, series_id:series_id},
+        success: function(data){
+            $("#bookList").html(data);
+        }
+    });
+}
+
+function getchapters(book_id){
+    $.ajax({
+        type: 'POST',
+        url: base_url+'/admin/user/getchapters',
+        data: {book_id:book_id},
+        success: function(data){
+            $("#chapterList").html(data);
+        }
+    });
+}
