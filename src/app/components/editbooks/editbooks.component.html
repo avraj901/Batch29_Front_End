@@ -1,6 +1,7 @@
 <table class="table table-hover shadow-sm p-3 mb-5 bg-body rounded">
   <thead>
     <tr>
+      <th>Sr.No</th>
       <th scope="col">Title</th>
       <th scope="col">Category</th>
       <th scope="col">Price</th>
@@ -10,7 +11,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let books of bookList">
+    <tr *ngFor="let books of bookList; let i = index">
+      <td>{{i+1}}</td>
       <td>{{books.title}}</td>
       <td>{{books.category}}</td>
       <td>{{books.price}}</td>

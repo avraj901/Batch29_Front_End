@@ -10,15 +10,15 @@ import { CartService } from 'src/app/service/cart.service';
 })
 export class CartComponent implements OnInit {
 
-  books : Books[] =[];
+  books: Books[] = [];
   public grandTotal !: number;
-  constructor(private bookService : BookService, private cartService : CartService) { }
+  constructor(private bookService: BookService, private cartService: CartService) { }
 
   ngOnInit(): void {
-   // this.getAllBooks();
+    // this.getAllBooks();
     this.cartService.getProducts().subscribe(response => {
       this.books = response;
-      this.grandTotal =this.cartService.getTotalPrice();
+      this.grandTotal = this.cartService.getTotalPrice();
     })
   }
 
@@ -30,11 +30,11 @@ export class CartComponent implements OnInit {
       console.log("error while fetching data. ")
     });
   }
-  removeBook(book:any){
+  removeBook(book: any) {
     this.cartService.removeCartItem(book);
   }
-  emptyCart(){
+  emptyCart() {
     this.cartService.removeAllCart();
   }
- 
+
 }

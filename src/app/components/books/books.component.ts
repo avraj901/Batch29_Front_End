@@ -10,9 +10,9 @@ import { CartService } from 'src/app/service/cart.service';
 })
 export class BooksComponent implements OnInit {
 
-  bookList : Books[] =[];
+  bookList: Books[] = [];
   searchText: any;
-  constructor(private bookService : BookService, private cartService : CartService) { }
+  constructor(private bookService: BookService, private cartService: CartService) { }
 
   ngOnInit(): void {
     this.getAllBooks();
@@ -22,14 +22,14 @@ export class BooksComponent implements OnInit {
     this.bookService.getAllUnBlockBooks().subscribe(response => {
       this.bookList = response;
       console.log("response", response);
-      this.bookList.forEach((a:any)=>{
-        Object.assign(a,{quantity:1,total:a.price});
+      this.bookList.forEach((a: any) => {
+        Object.assign(a, { quantity: 1, total: a.price });
       })
     }, error => {
       console.log("error while fetching data. ")
     });
   }
-  addToCart(book : any){
+  addToCart(book: any) {
     this.cartService.addtoCart(book);
   }
 

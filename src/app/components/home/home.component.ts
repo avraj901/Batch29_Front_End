@@ -12,11 +12,11 @@ import { CartService } from 'src/app/service/cart.service';
 export class HomeComponent implements OnInit {
 
   books: Books = new Books();
-  public totalItem : number = 0;
-  constructor(public bookService: BookService,private cartService : CartService) { }
+  public totalItem: number = 0;
+  constructor(public bookService: BookService, private cartService: CartService) { }
 
   ngOnInit(): void {
-    this.cartService.getProducts().subscribe(res =>{
+    this.cartService.getProducts().subscribe(res => {
       this.totalItem = res.length;
     })
   }
@@ -33,6 +33,6 @@ export class HomeComponent implements OnInit {
       }
     )
     console.log(this.books.title, this.books.category, this.books.image, this.books.publisher, this.books.active, this.books.content);
-    }
-    
+  }
+
 }

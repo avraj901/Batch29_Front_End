@@ -39,7 +39,7 @@
                 <h5 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;max-width: 100ch;">
                     {{book.title}}
                 </h5>
-                <p><strong>Price: </strong>{{book.price}}</p>
+                <p><strong>Price: </strong>{{book.price | currency:'INR':'symbol'}}</p>
                 <button class="btn btn-primary" (click)="addToCart(book)">Add to cart</button>
             </div>
         </ng-container>

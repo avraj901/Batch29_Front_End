@@ -12,7 +12,7 @@ import { SearchbooksComponent } from './components/searchbooks/searchbooks.compo
 import { UserDetailsComponent } from './components/user-details/user-details.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'register', pathMatch:'full'},
+  { path: '', redirectTo: 'login', pathMatch:'full'},
   { path: 'register', component: RegisterComponent},
   { path: 'login', component: LoginComponent},
   { path: 'books', component: BooksComponent},

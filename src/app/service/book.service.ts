@@ -13,9 +13,9 @@ export class BookService {
   Create_URL: string = "";
   Create_user_URL: string = "";
   Login_URL: string = "";
-  GetBookbyId_URL: string="";
-  UpdateBook_URL:string="";
-  blockBook_URL: string ="";
+  GetBookbyId_URL: string = "";
+  UpdateBook_URL: string = "";
+  blockBook_URL: string = "";
   constructor(public http: HttpClient) {
     this.GetAllBooks_URL = "http://localhost:8082/getallbooks"
     this.Delete_Book_URL = "http://localhost:8082/deletebook";
@@ -24,7 +24,7 @@ export class BookService {
     this.Login_URL = "http://localhost:8082/login";
     this.GetBookbyId_URL = "http://localhost:8082/getbook";
     this.UpdateBook_URL = "http://localhost:8082/updatebook";
-    this.blockBook_URL= "http://localhost:8082/blockbook";
+    this.blockBook_URL = "http://localhost:8082/blockbook";
   }
 
   // createBook(book: { title: string; category: string; image: string, price: number, publisher: string, active: boolean, content: string }) {
@@ -55,11 +55,11 @@ export class BookService {
   updateBook(book: Books, id: number) {
     return this.http.put(`${this.UpdateBook_URL}/${id}`, book);
   }
-  blockABook(id: number, block: boolean){
-    return this.http.put(`${this.blockBook_URL}/${id}/${block}`,{});
+  blockABook(id: number, block: boolean) {
+    return this.http.put(`${this.blockBook_URL}/${id}/${block}`, {});
   }
   getAllUnBlockBooks(): Observable<Books[]> {
-    return this.http.get<Books[]>("http://localhost:8082/getunblockbooks");
+    return this.http.get<Books[]>("http://localhost:8083/getunblockbooks");
   }
   getAllBlockBooks(): Observable<Books[]> {
     return this.http.get<Books[]>("http://localhost:8082/getblockbooks");

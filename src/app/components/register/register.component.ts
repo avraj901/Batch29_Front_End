@@ -17,49 +17,46 @@ export class RegisterComponent implements OnInit {
   submitted = false;
 
   constructor(
-      private formBuilder: FormBuilder,
-      private router: Router,
-      private bookService : BookService,
-      private alertService: AlertService
-  ) {}
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private bookService: BookService,
+    private alertService: AlertService
+  ) { }
 
   ngOnInit() {
-      this.registerForm = this.formBuilder.group({
-          firstName: ['', Validators.required],
-          lastName: ['', Validators.required],
-          emailId: ['', Validators.required],
-          username: ['', Validators.required],
-          password: ['', [Validators.required, Validators.minLength(6)]]
-      });
+    this.registerForm = this.formBuilder.group({
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      emailId: ['', Validators.required],
+      username: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(6)]]
+    });
   }
 
-  // convenience getter for easy access to form fields
   get f() { return this.registerForm.controls; }
 
   onSubmit() {
-      this.submitted = true;
+    this.submitted = true;
+    if (this.registerForm.invalid) {
+      return;
+    }
 
-      // stop here if form is invalid
-      if (this.registerForm.invalid) {
-          return;
-      }
-
-      this.loading = true;
-      this.bookService.register(this.registerForm.value)
-          .pipe(first())
-          .subscribe(
-              data => {
-                console.log(this.registerForm.value);
-                 alert("Signup Successfully");
-                 this.registerForm.reset();
-                  this.alertService.success('Registration successful', true);
-                  this.router.navigate(['/login']);
-              },
-              error => {
-                console.log(this.registerForm.value);
-                  this.alertService.error(error);
-                  this.loading = false;
-              });
+    this.loading = true;
+    this.bookService.register(this.registerForm.value)
+      .pipe(first())
+      .subscribe(
+        data => {
+          console.log(this.registerForm.value);
+          alert("Signup Successfully");
+          this.registerForm.reset();
+          this.alertService.success('Registration successful', true);
+          this.router.navigate(['/login']);
+        },
+        error => {
+          console.log(this.registerForm.value);
+          this.alertService.error(error);
+          this.loading = false;
+        });
   }
 }
 

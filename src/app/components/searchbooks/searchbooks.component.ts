@@ -18,7 +18,6 @@ export class SearchbooksComponent implements OnInit {
   title = 'Book Details ';
   searchText: any;
 
-
   ngOnInit(): void {
     this.bookService.getAllBooks().subscribe(response => {
       this.books = response;
@@ -27,7 +26,7 @@ export class SearchbooksComponent implements OnInit {
   }
   purchaseBook(id: number) {
     console.log("id", id);
-    this.router.navigate(['user',id]);
+    this.router.navigate(['user', id]);
   }
 
 }

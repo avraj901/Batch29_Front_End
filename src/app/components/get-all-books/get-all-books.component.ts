@@ -9,8 +9,8 @@ import { BookService } from 'src/app/service/book.service';
 })
 export class GetAllBooksComponent implements OnInit {
 
-  books : Books[] =[];
-  constructor(private bookService : BookService) { }
+  books: Books[] = [];
+  constructor(private bookService: BookService) { }
 
   ngOnInit(): void {
     this.getAllBooks();
@@ -25,16 +25,16 @@ export class GetAllBooksComponent implements OnInit {
     });
   }
 
-  deleteBook(id : number){
+  deleteBook(id: number) {
     this.bookService.deleteBook(id).subscribe(response => {
       console.log(response);
       this.getAllBooks();
     }, error => (console.log(error)))
   }
-  unblockBook(id : number){
-    this.bookService.blockABook(id,false).subscribe(response => {
-        console.log(response);
-        this.getAllBooks();
+  unblockBook(id: number) {
+    this.bookService.blockABook(id, false).subscribe(response => {
+      console.log(response);
+      this.getAllBooks();
     })
   }
 }

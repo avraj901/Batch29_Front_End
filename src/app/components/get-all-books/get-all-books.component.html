@@ -1,31 +1,33 @@
 <table class="table table-hover shadow-sm p-3 mb-5 bg-body rounded">
-    <thead>
-      <tr>
-        <th scope="col">Title</th>
-        <th scope="col">Category</th>
-        <th scope="col">Price</th>
-        <th scope="col">Publisher</th>
-        <th scope="col">Author</th>
-        <th scope="col">Published Date</th>
-        <th scope="col">Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let book of books">
-        <td>{{book.title}}</td>
-        <td>{{book.category}}</td>
-        <td>{{book.price}}</td>
-        <td>{{book.publisher}}</td>
-        <td>{{book.author}}</td>
-        <td>{{book.publishDate | date:'fullDate'}}</td>
-        <td>
-          <button type="button" class="btn btn-outline-danger btn-detail"
-            (click)="deleteBook(book.id)">Delete Book</button>
-        </td>
-        <td *ngIf="book.blockBook === true">
-          <button type="button" class="btn btn-outline-primary btn-detail" 
-          (click)="unblockBook(book.id)" >Unblock Book</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <thead>
+    <tr>
+      <th>Sr.No</th>
+      <th scope="col">Title</th>
+      <th scope="col">Category</th>
+      <th scope="col">Price</th>
+      <th scope="col">Publisher</th>
+      <th scope="col">Author</th>
+      <th scope="col">Published Date</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of books; let i = index">
+      <td>{{i+1}}</td>
+      <td>{{book.title}}</td>
+      <td>{{book.category}}</td>
+      <td>{{book.price}}</td>
+      <td>{{book.publisher}}</td>
+      <td>{{book.author}}</td>
+      <td>{{book.publishDate | date:'fullDate'}}</td>
+      <td>
+        <button type="button" class="btn btn-outline-danger btn-detail" (click)="deleteBook(book.id)">Delete
+          Book</button>
+      </td>
+      <td *ngIf="book.blockBook === true">
+        <button type="button" class="btn btn-outline-primary btn-detail" (click)="unblockBook(book.id)">Unblock
+          Book</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
